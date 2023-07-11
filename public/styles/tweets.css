@@ -4,7 +4,6 @@ section.tweets {
 
 article.tweet {
   margin: 25px 0px;
-  max-height: 200px;
   width: 100%;
 }
 
@@ -12,6 +11,8 @@ article > header {
   background-color: #ffffff;
   height: 50px;
   padding: 25px 25px;
+  display: flex;
+  gap: 15px;
 }
 
 h3.tweet-user {
@@ -20,17 +21,31 @@ h3.tweet-user {
 
 article > section {
   background-color: #ffffff;
+  transition: 0.3s;
 }
 
+article > section:hover {
+  box-shadow: 10px 10px 15px 0px rgba(117, 131, 255, 0.18);
+}
+
+
 .tweet-content {
-  padding: 0px 25px;
+  padding: 25px;
+  max-height: 200px;
 }
 
 footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
+  margin: 10px 0px;
+}
+
+footer > p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4056A1;
 }
 
 footer > ul {
@@ -41,14 +56,13 @@ footer > ul {
 
 footer > ul > li {
   list-style-type: none;
-
 }
 
 i {
   color: #4056A1;
 }
 
-i:hover {
+.fa-flag:hover {
   color: #6780c8;
   cursor: pointer;
 }
