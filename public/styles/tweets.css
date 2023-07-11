@@ -1,0 +1,54 @@
+section.tweets {
+  width: 75%;
+}
+
+article.tweet {
+  margin: 25px 0px;
+  max-height: 200px;
+  width: 100%;
+}
+
+article > header {
+  background-color: #ffffff;
+  height: 50px;
+  padding: 25px 25px;
+}
+
+h3.tweet-user {
+  margin: 0px;
+}
+
+article > section {
+  background-color: #ffffff;
+}
+
+.tweet-content {
+  padding: 0px 25px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+footer > ul {
+  display: flex;
+  margin: 5px 0px;
+  gap: 15px;
+}
+
+footer > ul > li {
+  list-style-type: none;
+
+}
+
+i {
+  color: #4056A1;
+}
+
+i:hover {
+  color: #6780c8;
+  cursor: pointer;
+}
