@@ -30,8 +30,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="scripts/client.js"></script>
+  <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -58,6 +58,8 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+    
+    <!-- Post new tweet -->
     <section class="new-tweet">
       <h2 class="new-tweet">Compose Tweet</h2>
       <form method="POST" action="/tweets">
@@ -70,6 +72,7 @@
       </form>
     </section>
 
+    <!-- Tweets feed -->
     <section class="tweets">
       <article class="tweet">
         <header>
