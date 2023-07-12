@@ -1,13 +1,24 @@
-section.tweets {
-  width: 75%;
-}
-
-article.tweet {
+.tweet {
   margin: 25px 0px;
   width: 100%;
 }
 
-article > header {
+.tweets {
+  width: 75%;
+}
+
+.tweet-content {
+  background-color: #ffffff;
+  transition: 0.3s;
+  padding: 25px;
+  max-height: 200px;
+}
+
+.tweet-user {
+  margin: 0px;
+}
+
+.tweet > header {
   background-color: #ffffff;
   height: 50px;
   padding: 25px 25px;
@@ -15,25 +26,7 @@ article > header {
   gap: 15px;
 }
 
-h3.tweet-user {
-  margin: 0px;
-}
-
-article > section {
-  background-color: #ffffff;
-  transition: 0.3s;
-}
-
-article > section:hover {
-  box-shadow: 10px 10px 15px 0px rgba(117, 131, 255, 0.18);
-}
-
-.tweet-content {
-  padding: 25px;
-  max-height: 200px;
-}
-
-article > footer {
+.tweet > footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,27 +34,27 @@ article > footer {
   margin: 10px 0px;
 }
 
-footer > p {
-  font-size: 16px;
-  font-weight: 400;
-  color: #4056A1;
-}
-
-footer > ul {
+.tweet > footer > ul {
   display: flex;
   margin: 5px 0px;
   gap: 15px;
 }
 
-footer > ul > li {
-  list-style-type: none;
+.tweet > footer > p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4056A1;
 }
 
-i {
-  color: #4056A1;
+.tweet > footer > ul > li {
+  list-style-type: none;
 }
 
 .fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
   color: #6780c8;
   cursor: pointer;
+}
+
+.tweet-content:hover {
+  box-shadow: 10px 10px 15px 0px rgba(117, 131, 255, 0.18);
 }
