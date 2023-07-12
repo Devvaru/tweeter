@@ -28,13 +28,12 @@ article > section:hover {
   box-shadow: 10px 10px 15px 0px rgba(117, 131, 255, 0.18);
 }
 
-
 .tweet-content {
   padding: 25px;
   max-height: 200px;
 }
 
-footer {
+article > footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -62,7 +61,7 @@ i {
   color: #4056A1;
 }
 
-.fa-flag:hover {
+.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
   color: #6780c8;
   cursor: pointer;
 }
