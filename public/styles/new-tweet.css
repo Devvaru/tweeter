@@ -4,14 +4,21 @@
   width: 75%;
 }
 
-main > section> h2 {
-  padding-bottom: 25px;
+.post-tweet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .new-tweet > form {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.new-tweet > h2 {
+  padding-bottom: 25px;
+  margin: 0px;
 }
 
 .new-tweet > form > label {
@@ -23,10 +30,4 @@ main > section> h2 {
   width: 100%;
   border-style: none;
   resize: vertical;
-}
-
-.post-tweet {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
