@@ -20,3 +20,7 @@ nav > div {
   flex-direction: column;
   align-items: center;
 }
+
+.fa-angles-down {
+  color: #eb0000;
+}
