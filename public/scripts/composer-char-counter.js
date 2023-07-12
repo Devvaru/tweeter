@@ -2,15 +2,21 @@ $(document).ready(function () {
 
   $("#tweet-text").keyup(function () {
 
+    // length of input field
     let count = $(this).val().length;
 
+    // update counter number based on input
     let $counter = $(this).parent().find(".counter").text(140 - count);
 
+    // Change color based on value
     if ($counter.val() < 0) {
-      ($counter).css('color', 'red')
-    } else if ($counter.val() >= 0) {
-      ($counter).css('color', '#0e1737')
-    }
 
+      $($counter).removeClass("blue-counter").addClass("red-counter");
+
+    } else if ($counter.val() >= 0) {
+
+      $($counter).removeClass("red-counter").addClass("blue-counter");
+
+    }
   });
 });
