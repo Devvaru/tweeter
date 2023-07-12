@@ -8,7 +8,7 @@ body > header {
   align-items: center;
 }
 
-header > h2, img {
+header > div > div > h2, img {
   margin: 0px;
   padding: 0px;
   z-index: 2;
