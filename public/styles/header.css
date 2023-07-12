@@ -4,15 +4,17 @@ body > header {
   padding-top: 120px;
   color: #0e1737;
   background-color: #889fee;
+  display: flex;
+  align-items: center;
 }
 
-h2, img {
+header > h2, img {
   margin: 0px;
   padding: 0px;
   z-index: 2;
 }
 
-.texture-overlay {
+header > div.texture-overlay {
   display: flex;
   flex-direction: column;
   justify-content: center;
