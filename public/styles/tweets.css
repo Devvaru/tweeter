@@ -15,14 +15,29 @@
 }
 
 .tweet-user {
+  font-size: 24px;
   margin: 0px;
+  line-height: 0px;
+}
+
+.tweet-handle {
+  font-size: 17px;
+  margin: 0px;
+  line-height: 0px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
 }
 
 .tweet > header {
   background-color: #ffffff;
-  height: 50px;
-  padding: 25px 25px;
+  height: 75px;
+  padding: 25px 25px 0px 25px;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   gap: 15px;
 }
 
@@ -41,8 +56,8 @@
 }
 
 .tweet > footer > p {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 17px;
+  font-weight: 600;
   color: #4056A1;
 }
 
