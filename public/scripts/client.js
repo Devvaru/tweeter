@@ -35,8 +35,8 @@ $(document).ready(function () {
   const $tweet = $(`
     <article class="tweet">
       <header>
-        <img class="avatar" src="${tweet.user.avatars}">
-        <h2 class="tweet-user">${tweet.user.name}</h3>
+        <img class="avatar" src="${tweet.user.avatars}"/>
+        <h3 class="tweet-user">${tweet.user.name}</h3>
         <h3 class="tweet-handle">${tweet.user.handle}</h3>
       </header>
       <p class="tweet-content">${tweet.content.text}</p>
