@@ -1,3 +1,5 @@
+// const { response } = require("express");
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -29,10 +31,10 @@ const data = [
   }
 ];
 
-$(document).ready(function () {
+$(document).ready(function(e) {
 
-  const createTweetElement = function (tweet) {
-  const $tweet = $(`
+  const createTweetElement = function(tweet) {
+    const $tweet = $(`
     <article class="tweet">
       <header>
         <img class="avatar" src="${tweet.user.avatars}"/>
@@ -57,14 +59,36 @@ $(document).ready(function () {
     </article>
   `);
     return $tweet;
-  }
+  };
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       let $post = createTweetElement(tweet);
       $('.tweets').append($post);
     }
-  }
+  };
 
   renderTweets(data);
+
+  $('#tweetform').on('submit', function(e) {
+
+    // prevents default actions of form submission
+    e.preventDefault();
+
+    // get form data and turn it into a string
+    let data = $('#tweetform').serialize();
+
+    $.ajax({
+      url: "/tweets", // add tweet to /tweets
+      method: "POST",
+      data: data,
+      success: (response) => {
+        console.log(data);
+      },
+      error: function(err) {
+        console.log("there was an error ", err);
+      }
+
+    });
+  });
 });
