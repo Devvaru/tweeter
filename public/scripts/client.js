@@ -83,7 +83,6 @@ $(document).ready(function() {
         method: "POST",
         data: tweet,
         success: function(response) {
-          console.log($('#tweet-text'))
           $('#tweet-text').val("");
           loadtweets();
         },
