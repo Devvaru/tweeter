@@ -44,7 +44,7 @@ $(document).ready(function(e) {
       </header>
       <p class="tweet-content">${tweet.content.text}</p>
       <footer> 
-        <p>${tweet.created_at}</p>
+        <p>${timeago.format(tweet.created_at)}</p>
         <ul>
           <li>
             <i class="fa-solid fa-flag"></i>
