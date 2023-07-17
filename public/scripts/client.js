@@ -8,6 +8,7 @@
 
 $(document).ready(function() {
 
+  // tweet template
   const createTweetElement = function(tweet) {
     const $tweet = $(`
     <article class="tweet">
@@ -36,6 +37,7 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  //renders new tweets
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       let $post = createTweetElement(tweet);
@@ -43,28 +45,43 @@ $(document).ready(function() {
     }
   };
 
+  // event listener on tweet submission
   $('#tweetform').on('submit', function(e) {
 
     // prevents default actions of form submission
     e.preventDefault();
 
-    // get form data and turn it into a string
+    // get form data and turn it into a string,
     let tweet = $('#tweetform').serialize();
+    // slice off 'text=' to get length
+    let tweetSliced = tweet.slice(5);
 
-    $.ajax({
-      url: "/tweets", // add tweet to /tweets
-      method: "POST",
-      data: tweet,
-      success: (response) => {
-        console.log(tweet);
-      },
-      error: function(err) {
-        console.log("there was an error ", err);
-      }
+    // form validation
+    if (tweetSliced.length > 140) {
+      alert("Tweet too long!");
 
-    });
+    } else if (tweetSliced.length === 0) {
+      alert("Type something!");
+
+    } else {
+
+      $.ajax({
+        url: "/tweets", // add tweet to /tweets
+        method: "POST",
+        data: tweet,
+        success: function(response) {
+          console.log(response, tweet);
+        },
+        error: function(err) {
+          console.log("there was an error ", err);
+        }
+      });
+
+    }
+    
   });
 
+  // load existing tweets
   const loadtweets = function() {
 
     $.ajax({
@@ -74,6 +91,7 @@ $(document).ready(function() {
         renderTweets(response);
       }
     });
+
   };
 
   loadtweets();
