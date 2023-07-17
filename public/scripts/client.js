@@ -8,6 +8,27 @@
 
 $(document).ready(function() {
 
+  //renders new tweets
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      let $post = createTweetElement(tweet);
+      $('.tweets').append($post);
+    }
+  };
+
+  // load existing tweets
+  const loadtweets = function() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      success: (response) => {
+        renderTweets(response);
+      }
+    });
+  };
+
+  loadtweets();
+
   // tweet template
   const createTweetElement = function(tweet) {
     const $tweet = $(`
@@ -37,14 +58,6 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  //renders new tweets
-  const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
-      let $post = createTweetElement(tweet);
-      $('.tweets').append($post);
-    }
-  };
-
   // event listener on tweet submission
   $('#tweetform').on('submit', function(e) {
 
@@ -70,30 +83,12 @@ $(document).ready(function() {
         method: "POST",
         data: tweet,
         success: function(response) {
-          console.log(response, tweet);
+          loadtweets();
         },
         error: function(err) {
           console.log("there was an error ", err);
         }
       });
-
     }
-    
   });
-
-  // load existing tweets
-  const loadtweets = function() {
-
-    $.ajax({
-      url: "/tweets",
-      method: "GET",
-      success: (response) => {
-        renderTweets(response);
-      }
-    });
-
-  };
-
-  loadtweets();
-
 });
