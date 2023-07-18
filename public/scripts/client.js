@@ -77,11 +77,12 @@ $(document).ready(function() {
     let tweetSliced = tweet.slice(5);
 
     // form validation
-    if (tweetSliced.length > 140) {
-      alert("Tweet too long!");
+    if (tweetSliced.length === 0) {
+      // $('.error-empty').addClass('error-show');
+      $('.error-empty').slideDown();
 
-    } else if (tweetSliced.length === 0) {
-      alert("Type something!");
+    } else if (tweetSliced.length > 140) {
+      $('.error-count').slideDown();
 
     } else {
 
@@ -98,5 +99,10 @@ $(document).ready(function() {
         }
       });
     }
+  });
+
+  $('#tweet-text').on('keyup', function() {
+    $('.error-empty').slideUp();
+    $('.error-count').slideUp();
   });
 });
