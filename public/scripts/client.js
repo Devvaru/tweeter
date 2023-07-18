@@ -29,6 +29,13 @@ $(document).ready(function() {
 
   loadtweets();
 
+  // prevents cross-site scripting
+  const escape = function(text) {
+    let p = document.createElement("p");
+    p.appendChild(document.createTextNode(text));
+    return p.innerHTML;
+  }
+
   // tweet template
   const createTweetElement = function(tweet) {
     const $tweet = $(`
@@ -38,7 +45,7 @@ $(document).ready(function() {
         <h3 class="tweet-user">${tweet.user.name}</h3>
         <h3 class="tweet-handle">${tweet.user.handle}</h3>
       </header>
-      <p class="tweet-content">${tweet.content.text}</p>
+      <p class="tweet-content">${escape(tweet.content.text)}</p>
       <footer> 
         <p>${timeago.format(tweet.created_at)}</p>
         <ul>
