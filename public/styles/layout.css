@@ -15,8 +15,8 @@ html {
  */
 
 body {
-  color: #373737;
-  background-color: #c9d3f2;
+  color: #1B3668;
+  background-color: #E8F2FF;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
   display: flex;
@@ -38,17 +38,22 @@ main {
  */
 
  button {
+  font-family: Bungee, sans-serif;
+  font-size: 20px;
   border-style: none;
   padding: 10px 25px;
   margin: 25px 0px;
-  font-weight: 600;
+  font-weight: 300;
   color: #ffffff;
-  background-color: #4056A1;
-  transition: 0.3s;
+  background: linear-gradient(to right,#345DA8 50%, #6DA0FF 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: 0.5s ease-out;
 }
 
 button:hover {
-  background-color: #6780c8;
+  background: to left, #345DA8;
+  background-position: left bottom;
   cursor: pointer;
 }
 
@@ -57,7 +62,8 @@ p {
 }
 
 i {
-  color: #4056A1;
+  color: #6DA0FF;
+  transition: 0.3s;
 }
 
 .red-counter {
