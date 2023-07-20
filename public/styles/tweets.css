@@ -1,5 +1,5 @@
 .tweet {
-  margin: 25px 0px;
+  margin: 15px 0px;
   width: 100%;
 }
 
@@ -12,6 +12,16 @@
   transition: 0.3s;
   padding: 25px;
   max-height: 200px;
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.17);
+  overflow-wrap:break-word;
+}
+
+.user-names {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
 }
 
 .tweet-user {
@@ -24,6 +34,13 @@
   font-size: 17px;
   margin: 0px;
   line-height: 0px;
+  opacity: 70%;
+  transition: 0.3s;
+}
+
+.tweet-handle:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .avatar {
@@ -31,7 +48,7 @@
   height: 50px;
 }
 
-.tweet > header {
+.tweet>header {
   background-color: #ffffff;
   height: 75px;
   padding: 25px 25px 0px 25px;
@@ -39,37 +56,38 @@
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
+  border-radius: 25px 25px 0px 0px;
+  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.17);
 }
 
-.tweet > footer {
+.tweet>footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 10px 0px;
+  margin-top: 10px;
+  padding: 0px 15px;
 }
 
-.tweet > footer > ul {
+.tweet>footer>ul {
   display: flex;
   margin: 5px 0px;
   gap: 15px;
 }
 
-.tweet > footer > p {
+.tweet>footer>p {
   font-size: 17px;
   font-weight: 600;
   color: #4056A1;
 }
 
-.tweet > footer > ul > li {
+.tweet>footer>ul>li {
   list-style-type: none;
 }
 
-.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
-  color: #6780c8;
+.fa-flag:hover,
+.fa-retweet:hover,
+.fa-heart:hover {
+  color: #345DA8;
   cursor: pointer;
-}
-
-.tweet-content:hover {
-  box-shadow: 10px 10px 15px 0px rgba(117, 131, 255, 0.18);
 }
