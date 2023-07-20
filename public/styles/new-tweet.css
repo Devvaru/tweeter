@@ -4,38 +4,113 @@
   width: 75%;
 }
 
+.textarea-border {
+  border-radius: 45px 45px 45px 0px;
+  background: #ffffff;
+  padding: 25px;
+  transition: 0.3s;
+}
+
 .post-tweet {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.new-tweet > form {
+.submit-tweet {
+  border-radius: 0px 24px 24px 24px;
+}
+
+#tweetform {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.new-tweet > h2 {
-  padding-bottom: 25px;
-  margin: 0px;
-}
-
-.new-tweet > form > label {
+.new-tweet>form>label {
   font-weight: 600;
-  padding-bottom: 10px;
+  padding: 0px 0px 25px 0px;
 }
 
-.new-tweet > form > textarea {
+/* Error display */
+
+.error-tooltip-container {
+  position: relative;
+  display: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  width: 100%;
+  display:flex;
+}
+
+/* tooltip bubble*/
+.error-tooltip-container .error-empty {
+  visibility: hidden;
+  background-color: #345DA8;
+  color: #ffffff;
+  opacity: 1;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px 25px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+/* tooltip arrow */
+.error-tooltip-container .error-empty::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #345DA8 transparent transparent transparent;
+}
+
+/* tooltip bubble*/
+.error-tooltip-container .error-count {
+  visibility: hidden;
+  background-color: #345DA8;
+  color: #ffffff;
+  opacity: 1;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px 25px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+/* tooltip arrow */
+.error-tooltip-container .error-count::after { 
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #345DA8 transparent transparent transparent;
+}
+
+/* add this class to reveal error */
+.reveal-error-tooltip{
+  visibility: visible !important;
+}
+
+#tweet-text {
   width: 100%;
   border-style: none;
+  outline: none;
   resize: vertical;
 }
 
-.error-empty, .error-count {
-  color: #940303;
-  font-size: 16px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  display: none;
+.textarea-border:hover, .textarea-border:focus {
+  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.17);
+
 }
