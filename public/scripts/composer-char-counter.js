@@ -6,7 +6,7 @@ $(document).ready(function () {
     let count = $(this).val().length;
 
     // update counter number based on input
-    let $counter = $(this).parent().find(".counter").text(140 - count);
+    let $counter = $(this).parent().parent().find(".counter").text(140 - count);
 
     // Change color based on value
     if ($counter.val() < 0) {
