@@ -42,8 +42,10 @@ $(document).ready(function() {
     <article class="tweet">
       <header>
         <img class="avatar" src="${tweet.user.avatars}"/>
-        <h3 class="tweet-user">${tweet.user.name}</h3>
-        <h3 class="tweet-handle">${tweet.user.handle}</h3>
+        <div class="user-names">
+          <h3 class="tweet-user">${tweet.user.name}</h3>
+          <h3 class="tweet-handle">${tweet.user.handle}</h3>
+        </div>
       </header>
       <p class="tweet-content">${escape(tweet.content.text)}</p>
       <footer> 
@@ -79,10 +81,10 @@ $(document).ready(function() {
     // form validation
     if (tweetSliced.length === 0) {
       // $('.error-empty').addClass('error-show');
-      $('.error-empty').slideDown();
+      $('.error-empty').addClass("reveal-error-tooltip");
 
     } else if (tweetSliced.length > 140) {
-      $('.error-count').slideDown();
+      $('.error-count').addClass("reveal-error-tooltip");
 
     } else {
 
@@ -102,7 +104,7 @@ $(document).ready(function() {
   });
 
   $('#tweet-text').on('keyup', function() {
-    $('.error-empty').slideUp();
-    $('.error-count').slideUp();
+    $('.error-empty').removeClass("reveal-error-tooltip");
+    $('.error-count').removeClass("reveal-error-tooltip");
   });
 });
