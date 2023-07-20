@@ -1,7 +1,7 @@
 nav {
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  background-color: #6DA0FF;
   color: #FFFFFF;
   padding: 0em 1.5em;
   display: flex;
@@ -22,5 +22,5 @@ nav > div {
 }
 
 .fa-angles-down {
-  color: #eb0000;
+  color: #345DA8;
 }
