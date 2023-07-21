@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 15px;
 }
 
 .submit-tweet {
@@ -46,6 +47,7 @@
 .error-tooltip-container .error-empty {
   visibility: hidden;
   background-color: #345DA8;
+  font-size: 17px;
   color: #ffffff;
   opacity: 1;
   text-align: center;
@@ -74,6 +76,7 @@
 .error-tooltip-container .error-count {
   visibility: hidden;
   background-color: #345DA8;
+  font-size: 17px;
   color: #ffffff;
   opacity: 1;
   text-align: center;
@@ -112,5 +115,19 @@
 
 .textarea-border:hover, .textarea-border:focus {
   box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.17);
+}
 
+@media (max-width: 640px) {
+  .new-tweet {
+    width: 90%;
+  }
+
+  .new-tweet>form>label {
+    display: flex;
+    align-self: center;
+  }
+
+  #tweet-text {
+    font-size: 18px;
+  }
 }
