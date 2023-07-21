@@ -25,6 +25,15 @@ nav > div {
   color: #345DA8;
 }
 
+.nav-right {
+  transition: 0.5s;
+}
+
+.nav-right:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 @media (max-width: 640px) {
   nav {
     justify-content: center;
