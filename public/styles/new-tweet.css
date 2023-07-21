@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 75%;
+  display: none;
 }
 
 .textarea-border {
@@ -118,8 +119,14 @@
 }
 
 @media (max-width: 640px) {
+  /* overwrites jquery toggle */
   .new-tweet {
     width: 90%;
+    display: block !important;
+  }
+
+  .submit-tweet {
+    margin: 10px 0px;
   }
 
   .new-tweet>form>label {
