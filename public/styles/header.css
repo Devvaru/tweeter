@@ -1,31 +1,45 @@
-body > header {
-  height: 520px;
+#layout > header {
   width: 100%;
-  padding-top: 120px;
-  color: #0e1737;
-  background-color: #889fee;
-  display: flex;
-  align-items: center;
+  margin-top: 120px;
+  padding: 50px;
+  background: linear-gradient(0deg, #A0C1FF 0%, #BADAFF 100%);
+  /* background: url(../images/paper-texture.jpg); */
 }
 
-header > div > div > h2, img {
+.texture-overlay {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.user-img-container,
+.name-container, #user-img, .name {
   margin: 0px;
   padding: 0px;
+  position: relative;
   z-index: 2;
 }
 
-header > div.texture-overlay {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(../images/texture-overlay.png);
-  background-size: cover;
-  background-attachment: fixed;
-  opacity: 1;
-  z-index: 0;
+@media (max-width: 640px) {
+
+  #layout > header {
+    margin-top: 50px;
+    padding: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #layout > header {
+    width: 33%;
+    height: 100vh;
+    margin-top: 120px;
+    flex-flow: column;
+    position: sticky;
+  }
+
+  header > div.texture-overlay {
+    justify-content: flex-start;
+  }
 }
