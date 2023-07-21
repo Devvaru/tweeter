@@ -47,43 +47,45 @@
     </div>
   </nav>
 
-  <!-- User section -->
-  <header>
-    <div class="texture-overlay">
-      <div>
-        <img src="images/profile-hex.png">
+  <div id="layout">
+    <!-- User section -->
+    <header>
+      <div class="texture-overlay">
+        <div class="user-img-container">
+          <img id="user-img" src="images/profile-hex.png">
+        </div>
+        <div class="name-container">
+          <h2 class="name">Your Name</h2>
+        </div>
       </div>
-      <div>
-        <h2>Your Name</h2>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
+    <!-- Page-specific (main) content here -->
+    <main class="container">
 
-    <!-- Post new tweet -->
-    <section class="new-tweet">
-      <form id="tweetform" name="tweetform">
-        <label for="tweet-text">What are you humming about?</label>
-        <div class="error-tooltip-container">
-          <p class="error-count">Tweet too long!</p>
-          <p class="error-empty">Tweet empty!</p>
-        </div>
-        <div class="textarea-border">
-          <textarea name="text" id="tweet-text"></textarea>
-        </div>
-        <div class="post-tweet">
-          <button class="submit-tweet" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
+      <!-- Post new tweet -->
+      <section class="new-tweet">
+        <form id="tweetform" name="tweetform">
+          <label for="tweet-text">What are you humming about?</label>
+          <div class="error-tooltip-container">
+            <p class="error-count">Tweet too long!</p>
+            <p class="error-empty">Tweet empty!</p>
+          </div>
+          <div class="textarea-border">
+            <textarea name="text" id="tweet-text"></textarea>
+          </div>
+          <div class="post-tweet">
+            <button class="submit-tweet" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
-    <!-- Tweets feed -->
-    <section class="tweets"></section>
+      <!-- Tweets feed -->
+      <section class="tweets"></section>
 
-  </main>
+    </main>
+  </div>
 
 </body>
 
