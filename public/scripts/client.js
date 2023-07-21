@@ -34,7 +34,7 @@ $(document).ready(function() {
     let p = document.createElement("p");
     p.appendChild(document.createTextNode(text));
     return p.innerHTML;
-  }
+  };
 
   // tweet template
   const createTweetElement = function(tweet) {
@@ -80,14 +80,12 @@ $(document).ready(function() {
 
     // form validation
     if (tweetSliced.length === 0) {
-      // $('.error-empty').addClass('error-show');
       $('.error-empty').addClass("reveal-error-tooltip");
 
     } else if (tweetSliced.length > 140) {
       $('.error-count').addClass("reveal-error-tooltip");
 
     } else {
-
       $.ajax({
         url: "/tweets", // add tweet to /tweets
         method: "POST",
@@ -103,8 +101,14 @@ $(document).ready(function() {
     }
   });
 
+  // hides error once user starts typing
   $('#tweet-text').on('keyup', function() {
     $('.error-empty').removeClass("reveal-error-tooltip");
     $('.error-count').removeClass("reveal-error-tooltip");
+  });
+
+  // toggles new tweet section
+  $('.nav-right').on('click', function() {
+    $('.new-tweet').slideToggle();
   });
 });
