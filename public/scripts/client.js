@@ -18,11 +18,11 @@ const createTweetElement = function(tweet) {
   const $tweet = $(`
     <article class="tweet">
       <header>
-        <img class="avatar" src="${tweet.user.avatars}"/>
-        <div class="user-names">
+        <div class="avatar-container">
+          <img class="avatar" src="${tweet.user.avatars}"/>
           <h3 class="tweet-user">${tweet.user.name}</h3>
-          <h3 class="tweet-handle">${tweet.user.handle}</h3>
         </div>
+        <h3 class="tweet-handle">${tweet.user.handle}</h3>
       </header>
       <p class="tweet-content">${escape(tweet.content.text)}</p>
       <footer> 
@@ -67,9 +67,9 @@ const loadtweets = function() {
   });
 };
 
-loadtweets();
-
 $(document).ready(function() {
+
+  loadtweets();
 
   // event listener on tweet submission
   $('#tweetform').on('submit', function(e) {
@@ -94,7 +94,7 @@ $(document).ready(function() {
         url: "/tweets", // add tweet to /tweets
         method: "POST",
         data: tweet,
-        success: function(response) {
+        success: function() {
           $('#tweet-text').val("");
           loadtweets();
         },
