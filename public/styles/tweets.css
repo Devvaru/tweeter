@@ -1,6 +1,5 @@
 .tweet {
   margin: 15px 0px;
-  width: 100%;
 }
 
 .tweets {
@@ -118,5 +117,15 @@
 
   .tweet>header {
     height: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tweet {
+    margin: 0px 0px 5px 0px;
+  }
+
+  .tweets {
+    width: 100%;
   }
 }
