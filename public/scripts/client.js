@@ -1,21 +1,15 @@
-// const { response } = require("express");
+$(document).ready(function () {
 
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+  // prevents cross-site scripting
+  const escape = function (text) {
+    let p = document.createElement("p");
+    p.appendChild(document.createTextNode(text));
+    return p.innerHTML;
+  };
 
-// prevents cross-site scripting
-const escape = function(text) {
-  let p = document.createElement("p");
-  p.appendChild(document.createTextNode(text));
-  return p.innerHTML;
-};
-
-// tweet template
-const createTweetElement = function(tweet) {
-  const $tweet = $(`
+  // tweet template
+  const createTweetElement = function (tweet) {
+    const $tweet = $(`
     <article class="tweet">
       <header>
         <div class="avatar-container">
@@ -41,52 +35,51 @@ const createTweetElement = function(tweet) {
       </footer>
     </article>
   `);
-  return $tweet;
-};
+    return $tweet;
+  };
 
-//renders new tweets
-const renderTweets = function(tweets) {
-  // Clear existing tweets
-  $('.tweets').empty();
+  //renders new tweets
+  const renderTweets = function (tweets) {
+    // Clear existing tweets
+    $('.tweets').empty();
 
-  // Re-render all tweets including new tweet
-  for (let tweet of tweets) {
-    let $post = createTweetElement(tweet);
-    $('.tweets').prepend($post);
-  }
-};
-
-// load existing tweets
-const loadtweets = function() {
-  $.ajax({
-    url: "/tweets",
-    method: "GET",
-    success: (response) => {
-      renderTweets(response);
+    // Re-render all tweets including new tweet
+    for (let tweet of tweets) {
+      let $post = createTweetElement(tweet);
+      $('.tweets').prepend($post);
     }
-  });
-};
+  };
 
-$(document).ready(function() {
+  // load existing tweets
+  const loadtweets = function () {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      success: (response) => {
+        renderTweets(response);
+      }
+    });
+  };
 
   loadtweets();
 
   // event listener on tweet submission
-  $('#tweetform').on('submit', function(e) {
+  $('#tweetform').on('submit', function (e) {
 
     // prevents default actions of form submission
     e.preventDefault();
 
+    // get value of textarea
+    let tweetText = $('#tweet-text').val();
+
     // get form data and turn it into a string
     let tweet = $('#tweetform').serialize();
-    // slice off 'text=' to get length
-    let tweetSliced = tweet.slice(5);
 
     // form validation
-    if (tweetSliced.length === 0) {
+    if (tweetText.length === 0) {
       $('.error-empty').addClass("reveal-error-tooltip");
 
-    } else if (tweetSliced.length > 140) {
+    } else if (tweetText.length > 140) {
       $('.error-count').addClass("reveal-error-tooltip");
 
     } else {
@@ -94,11 +87,11 @@ $(document).ready(function() {
         url: "/tweets", // add tweet to /tweets
         method: "POST",
         data: tweet,
-        success: function() {
+        success: function () {
           $('#tweet-text').val("");
           loadtweets();
         },
-        error: function(err) {
+        error: function (err) {
           console.log("there was an error ", err);
         }
       });
@@ -106,13 +99,13 @@ $(document).ready(function() {
   });
 
   // hides error once user starts typing
-  $('#tweet-text').on('keyup', function() {
+  $('#tweet-text').on('keyup', function () {
     $('.error-empty').removeClass("reveal-error-tooltip");
     $('.error-count').removeClass("reveal-error-tooltip");
   });
 
   // toggles new tweet section
-  $('.nav-right').on('click', function() {
+  $('.nav-right').on('click', function () {
     $('.new-tweet').slideToggle();
   });
 });
