@@ -138,3 +138,9 @@
     font-size: 18px;
   }
 }
+
+@media (min-width: 1024px) {
+  .new-tweet {
+    width: 100%;
+  }
+}
