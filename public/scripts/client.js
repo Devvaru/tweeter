@@ -6,18 +6,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+// prevents cross-site scripting
+const escape = function(text) {
+  let p = document.createElement("p");
+  p.appendChild(document.createTextNode(text));
+  return p.innerHTML;
+};
 
-  // prevents cross-site scripting
-  const escape = function (text) {
-    let p = document.createElement("p");
-    p.appendChild(document.createTextNode(text));
-    return p.innerHTML;
-  };
-
-  // tweet template
-  const createTweetElement = function (tweet) {
-    const $tweet = $(`
+// tweet template
+const createTweetElement = function(tweet) {
+  const $tweet = $(`
     <article class="tweet">
       <header>
         <img class="avatar" src="${tweet.user.avatars}"/>
@@ -43,37 +41,43 @@ $(document).ready(function () {
       </footer>
     </article>
   `);
-    return $tweet;
-  };
+  return $tweet;
+};
 
-  //renders new tweets
-  const renderTweets = function (tweets) {
-    for (let tweet of tweets) {
-      let $post = createTweetElement(tweet);
-      $('.tweets').prepend($post);
+//renders new tweets
+const renderTweets = function(tweets) {
+  // Clear existing tweets
+  $('.tweets').empty();
+
+  // Re-render all tweets including new tweet
+  for (let tweet of tweets) {
+    let $post = createTweetElement(tweet);
+    $('.tweets').prepend($post);
+  }
+};
+
+// load existing tweets
+const loadtweets = function() {
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    success: (response) => {
+      renderTweets(response);
     }
-  };
+  });
+};
 
-  // load existing tweets
-  const loadtweets = function () {
-    $.ajax({
-      url: "/tweets",
-      method: "GET",
-      success: (response) => {
-        renderTweets(response);
-      }
-    });
-  };
+loadtweets();
 
-  loadtweets();
+$(document).ready(function() {
 
   // event listener on tweet submission
-  $('#tweetform').on('submit', function (e) {
+  $('#tweetform').on('submit', function(e) {
 
     // prevents default actions of form submission
     e.preventDefault();
 
-    // get form data and turn it into a string,
+    // get form data and turn it into a string
     let tweet = $('#tweetform').serialize();
     // slice off 'text=' to get length
     let tweetSliced = tweet.slice(5);
@@ -90,11 +94,11 @@ $(document).ready(function () {
         url: "/tweets", // add tweet to /tweets
         method: "POST",
         data: tweet,
-        success: function (response) {
+        success: function(response) {
           $('#tweet-text').val("");
           loadtweets();
         },
-        error: function (err) {
+        error: function(err) {
           console.log("there was an error ", err);
         }
       });
@@ -102,13 +106,13 @@ $(document).ready(function () {
   });
 
   // hides error once user starts typing
-  $('#tweet-text').on('keyup', function () {
+  $('#tweet-text').on('keyup', function() {
     $('.error-empty').removeClass("reveal-error-tooltip");
     $('.error-count').removeClass("reveal-error-tooltip");
   });
 
   // toggles new tweet section
-  $('.nav-right').on('click', function () {
+  $('.nav-right').on('click', function() {
     $('.new-tweet').slideToggle();
   });
 });
