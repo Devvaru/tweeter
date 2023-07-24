@@ -9,10 +9,6 @@ Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML
 - Displays errors if the tweet is invalid
 - Toggle view the new tweet section
 
-## Screenshots
-!["Screenshot of Tweeter desktop view"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter-desktop.png?raw=true)
-!["Screenshot of Tweeter tablet view with error display"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter-tablet.png?raw=true)
-
 ## Getting Started
 
 1. Clone this respository onto your local device
@@ -26,3 +22,7 @@ Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML
 - Node 5.10.x or above
 - Chance
 - md5
+
+## Screenshots
+!["Screenshot of Tweeter desktop view"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter-desktop.png?raw=true)
+!["Screenshot of Tweeter tablet view with error display"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter-tablet.png?raw=true)
