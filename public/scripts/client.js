@@ -1,24 +1,26 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   // prevents cross-site scripting
-  const escape = function (text) {
+  const escape = function(text) {
     let p = document.createElement("p");
     p.appendChild(document.createTextNode(text));
     return p.innerHTML;
   };
 
   // tweet template
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = $(`
     <article class="tweet">
-      <header>
-        <div class="avatar-container">
-          <img class="avatar" src="${tweet.user.avatars}"/>
-          <h3 class="tweet-user">${tweet.user.name}</h3>
-        </div>
-        <h3 class="tweet-handle">${tweet.user.handle}</h3>
-      </header>
-      <p class="tweet-content">${escape(tweet.content.text)}</p>
+      <div class="tweet-box">
+        <header>
+          <div class="avatar-container">
+            <img class="avatar" src="${tweet.user.avatars}"/>
+            <h3 class="tweet-user">${tweet.user.name}</h3>
+          </div>
+          <h3 class="tweet-handle">${tweet.user.handle}</h3>
+        </header>
+        <p class="tweet-content">${escape(tweet.content.text)}</p>
+      </div> 
       <footer> 
         <p>${timeago.format(tweet.created_at)}</p>
         <ul>
@@ -39,7 +41,7 @@ $(document).ready(function () {
   };
 
   //renders new tweets
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // Clear existing tweets
     $('.tweets').empty();
 
@@ -51,7 +53,7 @@ $(document).ready(function () {
   };
 
   // load existing tweets
-  const loadtweets = function () {
+  const loadtweets = function() {
     $.ajax({
       url: "/tweets",
       method: "GET",
@@ -61,10 +63,11 @@ $(document).ready(function () {
     });
   };
 
+  // loads the pre-existing tweets from the data files
   loadtweets();
 
   // event listener on tweet submission
-  $('#tweetform').on('submit', function (e) {
+  $('#tweetform').on('submit', function(e) {
 
     // prevents default actions of form submission
     e.preventDefault();
@@ -87,11 +90,11 @@ $(document).ready(function () {
         url: "/tweets", // add tweet to /tweets
         method: "POST",
         data: tweet,
-        success: function () {
+        success: function() {
           $('#tweet-text').val("");
           loadtweets();
         },
-        error: function (err) {
+        error: function(err) {
           console.log("there was an error ", err);
         }
       });
@@ -99,13 +102,13 @@ $(document).ready(function () {
   });
 
   // hides error once user starts typing
-  $('#tweet-text').on('keyup', function () {
+  $('#tweet-text').on('keyup', function() {
     $('.error-empty').removeClass("reveal-error-tooltip");
     $('.error-count').removeClass("reveal-error-tooltip");
   });
 
   // toggles new tweet section
-  $('.nav-right').on('click', function () {
+  $('.nav-right').on('click', function() {
     $('.new-tweet').slideToggle();
   });
 });
