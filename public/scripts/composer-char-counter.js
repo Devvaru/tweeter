@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-  $("#tweet-text").keyup(function () {
+  $("#tweet-text").keyup(function() {
 
     // length of input field
     let count = $(this).val().length;
