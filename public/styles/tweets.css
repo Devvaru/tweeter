@@ -3,7 +3,12 @@
 }
 
 .tweets {
-  width: 75%;
+  width: 90%;
+}
+
+.tweet-box {
+  transition: 0.5s;
+  border-radius: 25px;
 }
 
 .tweet-content {
@@ -12,7 +17,6 @@
   padding: 25px;
   max-height: 200px;
   border-radius: 0px 0px 25px 25px;
-  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.12);
   overflow-wrap: break-word;
 }
 
@@ -31,11 +35,6 @@
   transition: 0.3s;
 }
 
-.tweet-handle:hover {
-  opacity: 100%;
-  cursor: pointer;
-}
-
 .avatar-container {
   display: flex;
   flex-direction: row;
@@ -48,7 +47,7 @@
   height: 50px;
 }
 
-.tweet>header {
+.tweet-box>header {
   background-color: #ffffff;
   height: 75px;
   padding: 25px 25px 0px 25px;
@@ -84,6 +83,16 @@
 
 .tweet>footer>ul>li {
   list-style-type: none;
+}
+
+.tweet-box:hover {
+  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.20);
+  cursor: pointer;
+}
+
+.tweet-handle:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .fa-flag:hover,
@@ -128,6 +137,6 @@
   }
 
   .tweets {
-    width: 100%;
+    width: 90%;
   }
 }
