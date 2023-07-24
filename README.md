@@ -7,7 +7,7 @@ Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML
 - Lets you post tweets to the feed
 - Includes a character counter
 - Displays errors if the tweet is invalid
-- Toggle view the new tweet section
+- Toggle the new tweet section
 
 ## Getting Started
 
