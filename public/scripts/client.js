@@ -67,7 +67,7 @@ $(document).ready(function() {
   loadtweets();
 
   // event listener on tweet submission
-  $('#tweetform').on('submit', function(e) {
+  $('#tweet-form').on('submit', function(e) {
 
     // prevents default actions of form submission
     e.preventDefault();
@@ -76,7 +76,7 @@ $(document).ready(function() {
     let tweetText = $('#tweet-text').val();
 
     // get form data and turn it into a string
-    let tweet = $('#tweetform').serialize();
+    let tweet = $('#tweet-form').serialize();
 
     // form validation
     if (tweetText.length === 0) {
