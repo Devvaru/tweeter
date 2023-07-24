@@ -1,7 +1,7 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 90%;
   display: none;
 }
 
@@ -23,12 +23,6 @@
   border-radius: 0px 24px 24px 24px;
 }
 
-#tweetform {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .new-tweet>form>label {
   font-weight: 600;
   padding: 0px 0px 25px 0px;
@@ -41,7 +35,7 @@
   display: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
   width: 100%;
-  display:flex;
+  display: flex;
 }
 
 /* tooltip bubble*/
@@ -91,7 +85,7 @@
 }
 
 /* tooltip arrow */
-.error-tooltip-container .error-count::after { 
+.error-tooltip-container .error-count::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -103,8 +97,18 @@
 }
 
 /* add this class to reveal error */
-.reveal-error-tooltip{
+.reveal-error-tooltip {
   visibility: visible !important;
+}
+
+.textarea-border:hover {
+  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.17);
+}
+
+#tweet-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 #tweet-text {
@@ -114,11 +118,8 @@
   resize: vertical;
 }
 
-.textarea-border:hover, .textarea-border:focus {
-  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.17);
-}
-
 @media (max-width: 640px) {
+
   /* overwrites jquery toggle */
   .new-tweet {
     width: 90%;
@@ -136,11 +137,5 @@
 
   #tweet-text {
     font-size: 18px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .new-tweet {
-    width: 100%;
   }
 }
