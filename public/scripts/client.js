@@ -59,6 +59,9 @@ $(document).ready(function() {
       method: "GET",
       success: (response) => {
         renderTweets(response);
+      },
+      error: (error) => {
+        console.log("There was an error ", error);
       }
     });
   };
@@ -94,8 +97,8 @@ $(document).ready(function() {
           $('#tweet-text').val("");
           loadtweets();
         },
-        error: function(err) {
-          console.log("there was an error ", err);
+        error: function(error) {
+          console.log("There was an error ", error);
         }
       });
     }
