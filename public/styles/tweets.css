@@ -17,7 +17,7 @@
   padding: 25px;
   max-height: 200px;
   border-radius: 0px 0px 25px 25px;
-  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .tweet-user {
@@ -86,7 +86,7 @@
 }
 
 .tweet-box:hover {
-  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.20);
+  box-shadow: 10px 10px 15px 0px rgba(136, 159, 238, 0.24);
   cursor: pointer;
 }
 
@@ -98,15 +98,11 @@
 .fa-flag:hover,
 .fa-retweet:hover,
 .fa-heart:hover {
-  color: #345DA8;
+  color: #4056A1;
   cursor: pointer;
 }
 
 @media (max-width: 640px) {
-  .tweets {
-    width: 90%;
-  }
-
   .avatar {
     width: 25px;
     height: 25px;
@@ -134,9 +130,5 @@
 @media (min-width: 1024px) {
   .tweet {
     margin: 0px 0px 5px 0px;
-  }
-
-  .tweets {
-    width: 90%;
   }
 }
