@@ -102,7 +102,7 @@
 }
 
 .textarea-border:hover {
-  box-shadow: 10px 10px 15px 0px rgba(142, 183, 254, 0.17);
+  box-shadow: 10px 10px 15px 0px rgba(136, 159, 238, 0.24);
 }
 
 #tweet-form {
@@ -115,7 +115,7 @@
   width: 100%;
   border-style: none;
   outline: none;
-  resize: none;
+  resize: vertical;
   word-wrap: break;
 }
 
@@ -123,7 +123,6 @@
 
   /* overwrites jquery toggle */
   .new-tweet {
-    width: 90%;
     display: block !important;
   }
 

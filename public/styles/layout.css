@@ -20,7 +20,7 @@ html {
 
 body {
   color: #1B3668;
-  background-color: #E8F2FF;
+  background-color: #ebefff;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
 }
@@ -46,12 +46,12 @@ button {
   margin: 25px 0px;
   font-weight: 300;
   color: #ffffff;
-  background: #6DA0FF;
+  background: #6a83d4;
   transition: 0.5s ease-out;
 }
 
 button:hover {
-  background: #345DA8;
+  background: #4056A1;
   cursor: pointer;
 }
 
@@ -60,7 +60,7 @@ p {
 }
 
 i {
-  color: #6DA0FF;
+  color: #6a83d4;
   transition: 0.3s;
 }
 
