@@ -115,7 +115,8 @@
   width: 100%;
   border-style: none;
   outline: none;
-  resize: vertical;
+  resize: none;
+  word-wrap: break;
 }
 
 @media (max-width: 640px) {
