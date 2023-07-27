@@ -24,5 +24,5 @@ Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML
 - md5
 
 ## Screenshots
-!["Screenshot of Tweeter desktop view"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter_desktop.png)
-!["Screenshot of Tweeter tablet view with error display"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter_tablet.png)
+!["Screenshot of Tweeter desktop view"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter-desktop.png)
+!["Screenshot of Tweeter tablet view with error display"](https://github.com/Devvaru/tweeter/blob/master/docs/tweeter-tablet.png)
