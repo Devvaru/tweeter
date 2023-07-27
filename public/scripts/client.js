@@ -77,12 +77,14 @@ $(document).ready(function() {
 
     // get value of textarea
     let tweetText = $('#tweet-text').val();
+    let tweetTrimmed = tweetText.trim();
 
     // get form data and turn it into a string
     let tweet = $('#tweet-form').serialize();
+    tweet = tweet.trim();
 
     // form validation
-    if (tweetText.length === 0) {
+    if (tweetText.length === 0 || tweetTrimmed.length === 0) {
       $('.error-empty').addClass("reveal-error-tooltip");
 
     } else if (tweetText.length > 140) {
